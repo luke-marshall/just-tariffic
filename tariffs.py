@@ -33,4 +33,11 @@ class Tariff():
 # =====================================
 
 # Here's a simple example
+# Create a tariff object.
+my_tariff = Tariff()
+# Build a scenario - time and amount of energy needed.
+time = datetime.datetime(1,2,2018,6)
+kWh = 6
+# Calculate the charge.
+my_charge = kWh * my_tariff.get_price(time)
 
