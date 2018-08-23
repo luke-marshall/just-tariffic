@@ -1,3 +1,9 @@
+# This may be my last correspondence, as Peter Dutton may be PM by this afternoon and I will be officially moved to the socialist paradise that is New Zealand
+
+
+# =====================================
+#  THE INTERFACE
+# =====================================
 
 
 # This is an interface
@@ -11,5 +17,20 @@ class Tariff():
     #       -Volume kWh
     #       -Peak Voltage / Power
     #       -Quality
+    
     def get_price(time):
         pass #this just lets you know the function does nothing right now.
+    
+    # My suggestion is to extend the get_price() function to handle those extensions when they come up, but make all the additional variables optional.
+    # So a 'voltage peak' tariff would have a function that looks like:
+    #   def get_price(time, peak_voltage=0) 
+    # A user could still use this function without having to know about peak voltage - importing the peak tariff wouldnt break anyones code. 
+
+
+
+# =====================================
+#  USING IT
+# =====================================
+
+# Here's a simple example
+
