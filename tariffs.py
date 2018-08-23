@@ -41,3 +41,26 @@ kWh = 6
 # Calculate the charge.
 my_charge = kWh * my_tariff.get_price(time)
 
+
+
+# =====================================
+#  Implementing It - Time of Use
+# =====================================
+
+# Here's my example of how you might do a time of use tariff.
+
+# Note we are 'Extending' the tariff interface.
+# We do this so that any code that expects a tariff object know how to interact with this tariff
+# You could swap it out with other tariff types without changing any other code. 
+class TimeOfUseTariff(Tariff):
+    
+    def get_price(time):
+        if time.hour < 7 :
+            return 0.17
+        elif time.hour > 18:
+            return 0.17
+        else:
+            return 0.35
+
+
+
