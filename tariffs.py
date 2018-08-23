@@ -64,3 +64,16 @@ class TimeOfUseTariff(Tariff):
 
 
 
+# Here's an example of a peak voltage tariff
+# We can optionally pass it a peak voltage, and if its over a threshold, add an additional charge. 
+class PeakVoltageTariff(Tariff):
+    
+    # Here we have the optional variable peak voltage, with a default of 0
+    # We make it optional and give it a default, so that we can include it in code that doesn't actually know about the peak voltage requirement. 
+    def get_price(time, peak_voltage=0):
+        if peak_voltage > 250:
+            return 0.45
+        else:
+            return 0.20
+
+
